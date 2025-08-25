@@ -12,7 +12,9 @@ class HomeController extends Controller
         return "bienvenido a la pagina principal"; #que devuelve un mensaje
     }*/
 
-    public function index(){ #definimos un metodo
-        return "bienvenido a la pagina principal"; #que devuelve un mensaje
+    #definimos un metodo:
+    public function index(){
+        /*return "bienvenido a la pagina principal"; #que devuelve un mensaje*/
+        return view('home'); #asi indicamos a Laravel que estamos intentando llamar a un documento que está en las vistas (resources/views) que se llama home
     }
 }

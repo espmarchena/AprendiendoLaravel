@@ -15,7 +15,7 @@ Route::get('/articulos', [ArticulosController::class, 'index']);
 #declaro array con dos parametros: la clase ArticulosController y el nombre del metodo para que sepa cual quiero usar dentro del controlador que le he dado
 Route::get('/articulos/create', [ArticulosController::class, 'create']);
 #declaro array con dos parametros: la clase ArticulosController y el nombre del metodo para que sepa cual quiero usar dentro del controlador que le he dado
-Route::get('/articulos/create', [ArticulosController::class, 'show']);
+Route::get('/articulos/{articulo}', [ArticulosController::class, 'show']);
 #ruta con parametro para hacer la funcion generica que abrirá tantos articulos como quiera crear: (sin usar controladores)
 /* Route::get('/articulos/{articulo}', function ($articulo) {  #{articulo} se refiere a que es un contenido variable que se almacena en la variable $articulo
     return "aquí se mostrará el articulo {$articulo}";
@@ -24,6 +24,7 @@ Route::get('/articulos/create', [ArticulosController::class, 'show']);
 }); */
 
 
+/*
 #ruta con varios parametros para hacer la funcion generica que abrirá tantos articulos como quiera crear
 Route::get('/articulos/{articulo}/{categoria}', function ($articulo, $categoria) { // {articulo} se refiere a que es un contenido variable que se almacena en la variable $articulo 
     return "aquí se mostrará el articulo {$articulo} de la categoría {categoria}";
@@ -40,7 +41,13 @@ Route::get('/articulos/{articulo}/{categoria?}', function ($articulo, $categoria
     }  
     return "aquí se mostrará el articulo {$articulo}";
     #si no se cumple la condicion de que no haya nada guardado en categoria, mostrará el mensaje sin ella
-});
+}); 
+*/
+
+
+
+
+
 
 // get -> peticiones que hacemos al escribir una url o cuando clicamos en un enlace y se nos redirige a alguna pagina
 // post -> peticiones que podemos hacer desde un formulario

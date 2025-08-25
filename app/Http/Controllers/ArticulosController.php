@@ -10,14 +10,21 @@ class ArticulosController extends Controller
      #definimos los metodos para que el programa haga cosas:
      
     public function index(){
-    return "aquí se mostrarán todos los artículos"; #que devuelve un mensaje en la URI indicada en la funcion donde esté este metodo en integrado en los parametros (en este caso /articulos)
+        return view('articulos.index'); #hacemos referencia a la carpera donde se encuentra dentro de views y luego al nombre de la vista
+        /*return "aquí se mostrarán todos los artículos"; #que devuelve un mensaje en la URI indicada en la funcion donde esté este metodo en integrado en los parametros (en este caso /articulos)*/
     }
 
     public function create(){
-        return "aquí se mostrará un formulario para crear un artículo";
+        return view('articulos.create');
+        /*return "aquí se mostrará un formulario para crear un artículo";*/
     }
 
     public function show($articulo){
-        return "aquí se mostrará el articulo {$articulo}";
+        // compact('post'); genera el siguiente array: ['articulo' => $articulo], por lo que tambien podria ponerse asi: return view('articulos.show', compact('articulo'));
+        return view('articulos.show', [
+            'articulo' => $articulo
+        /*return "aquí se mostrará el articulo {$articulo}";*/
+        ]);
+        
     }
 }
